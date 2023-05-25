@@ -1,13 +1,16 @@
 const express = require('express');
-const app = express();
-const SneaksAPI = require('sneaks-api');
-const sneaks = new SneaksAPI();
+const path = require('path')
+const app = express()
+const SneaksAPI = require("sneaks-api")
+const sneaks = new SneaksAPI()
 
-app.get('/', function(req,res) {
-    sneaks.getProducts("Yeezy Cinder", 1, function(err, products) {
-        res.send(products)
-    })
+app.use(express.static(path.join(__dirname, 'Frontend')));
+
+app.listen(3000)
+
+app.get('/allShoes', function(req,res) {
+    res.send("These are all shoes")
 })
 
-app.listen(3000);
-console.log("Server is running at http://localhost:3000");
+console.log("Server now listening on http://localhost:3000/")
+
