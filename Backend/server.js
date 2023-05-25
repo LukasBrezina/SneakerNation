@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path')
 const app = express()
 const SneaksAPI = require("sneaks-api")
-const sneaks = new SneaksAPI()
+const sneaks = new SneaksAPI
 
 app.use(express.static(path.join(__dirname, 'Frontend')));
 
