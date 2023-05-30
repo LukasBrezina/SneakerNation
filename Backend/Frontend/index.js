@@ -1,3 +1,5 @@
+
+
 window.onload = function () {
     const xhr = new XMLHttpRequest();
     xhr.onload = function () {
@@ -55,7 +57,7 @@ window.onload = function () {
       trendsDiv.appendChild(ul);
 
       const testButton = document.createElement("button")
-      testButton.textContent = 'test';
+      testButton.textContent = 'All Sneaker';
       testButton.onclick = function () {
         window.location.href = 'allShoes.html';
       };
