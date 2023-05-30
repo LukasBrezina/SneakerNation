@@ -1,4 +1,4 @@
-const SneaksAPI = require('sneaks-api')
+/* const SneaksAPI = require('sneaks-api')
 const sneaks = new SneaksAPI()
 
 function filterShoes(shoes) {
@@ -14,7 +14,6 @@ function filterShoes(shoes) {
     })
     return filtered;
 }
-
     let allShoes = [];
     const getProduct1 = new Promise(function(resolve,reject) {
         sneaks.getProducts("jordan", 1, function(err, products) {
@@ -33,5 +32,9 @@ function filterShoes(shoes) {
     
     Promise.all([getProduct1, getProduct2])
         .then(function() {
-          module.exports = JSON.parse(allShoes)
-        })
+            module.exports = JSON.parse(allShoes);
+        }) */
+
+
+        /* THIS IS COMMENTED,BECAUSE IT IS CAUSING PROBLEMS AND I DONT KNOW
+            WHY. PLEASE FIX IF YOU CAN FIX IT THANK YOU */

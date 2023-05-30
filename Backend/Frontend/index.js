@@ -1,11 +1,9 @@
-
-
 window.onload = function () {
     const xhr = new XMLHttpRequest();
     xhr.onload = function () {
       const bodyElement = document.querySelector("body");
       if (xhr.status == 200) {
-        
+      
       // Create div element front
       const frontDiv = document.createElement('div');
       frontDiv.id = 'front';
@@ -17,16 +15,21 @@ window.onload = function () {
 
       // Create p element
       const p = document.createElement('p');
-      p.textContent = 'Every Sneaker you can dream of';
+      p.textContent = '"Every Sneaker you can dream of"';
       frontDiv.appendChild(p);
 
       // Create button element
       const button = document.createElement('button');
       button.textContent = 'Wishlist';
+      button.id = 'wishlistButton';
       button.onclick = function () {
         window.location.href = 'wishlist.html';
       };
       frontDiv.appendChild(button);
+
+      const img1 = document.createElement("img");
+      img1.setAttribute("src", "https://images.pexels.com/photos/1070360/pexels-photo-1070360.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+      frontDiv.append(img1);
       bodyElement.appendChild(frontDiv);
 
       // Create div element trends
@@ -38,31 +41,30 @@ window.onload = function () {
       h2.textContent = 'Trends';
       trendsDiv.appendChild(h2);
 
-      // Create unordered list element
-      const ul = document.createElement('ul');
+      const trendButton = document.createElement("button");
+      trendButton.innerText = "Trending";
+      trendButton.id = "trendButton";
+      trendButton.onclick = function() {
+        window.location.href = 'trend.html';
+      }
+      trendsDiv.appendChild(trendButton);
+      bodyElement.appendChild(trendsDiv);
 
-      // Create list item elements 
-      const li1 = document.createElement('li');
-      li1.textContent = 'Sneaker1';
-      ul.appendChild(li1);
+      let allDiv = document.createElement("div");
+      allDiv.id = "allDiv";
 
-      const li2 = document.createElement('li');
-      li2.textContent = 'Sneaker2';
-      ul.appendChild(li2);
+      let h2_all = document.createElement("h2");
+      h2_all.textContent = "All Products";
+      allDiv.appendChild(h2_all);
 
-      const li3 = document.createElement('li');
-      li3.textContent = 'Sneaker3';
-      ul.appendChild(li3);
-
-      trendsDiv.appendChild(ul);
-
-      const testButton = document.createElement("button")
-      testButton.textContent = 'All Sneaker';
-      testButton.onclick = function () {
+      const allButton = document.createElement("button")
+      allButton.textContent = 'All Sneaker';
+      allButton.id = "allButton";
+      allButton.onclick = function () {
         window.location.href = 'allShoes.html';
       };
-      bodyElement.appendChild(trendsDiv);
-      bodyElement.appendChild(testButton);
+      allDiv.appendChild(allButton);
+      bodyElement.appendChild(allDiv);
 
       } else {
         bodyElement.append(

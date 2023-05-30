@@ -1,20 +1,25 @@
 body{
-    background-color: white;
+    background-color: lightcyan;
 }
 h1 {
    text-align: center;
    color: #95d4f4;
    font-weight: bold;
+   font-size: 100px;
+   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
 p {
     text-align: center;
+    font-size: 30px;
+    font-family: 'Courier New', Courier, monospace;
     
 }
 h2 {
     text-align: center;
     font-weight: bold;
+    font-size: 50px;
 }
-button {
+button:not(#navButton) {
     display:flex;
     justify-content: right;
     align-items: right;
@@ -32,5 +37,54 @@ button {
 } 
 button:hover {
     background-color: lightcyan;
-  }
- 
+}
+
+#wishlistButton {
+    position: relative;
+    top: 50%;
+    left: 42%;
+    margin: 20px;
+}
+#trendButton {
+    position: relative;
+    top: 50%;
+    left: 43%;
+    margin: 20px;
+}
+
+#allButton {
+    position: relative;
+    top: 50%;
+    left: 41%;
+    margin: 20px;
+}
+
+.navigation {
+    position:fixed;
+    display:grid;
+    width: 200px;
+    background-color: lightgrey;
+}
+
+#navButton {
+    font-size: 15px;
+    padding: 10px 15px 10px 12px;
+}
+
+img {
+    height: 40%;
+    width: 40%;
+    border: 5px solid #000;
+    position: relative;
+    display:flex;
+    justify-content: center;
+    margin-left: 400px;
+    border-radius: 90%;
+}
+
+footer {
+    font-size: 20px;
+    position: fixed;
+    background-color: darkgrey;
+    bottom: 50px;
+}
