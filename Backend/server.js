@@ -3,6 +3,7 @@ const path = require('path')
 const app = express()
 const SneaksAPI = require('sneaks-api')
 const sneaks = new SneaksAPI()
+const shoeModel  = require('./shoe-model.js')
 
 app.use(express.static(path.join(__dirname, 'Frontend')));
 
@@ -11,7 +12,7 @@ function filterShoes(shoes) {
         return {
             shoeName: item.shoeName,
             brand: item.brand,
-            colorWay: item.colorWay,
+            // colorWay: item.colorWay,
             price: item.retailPrice,
             thumbnail: item.thumbnail,
             releaseDate: item.releaseDate
@@ -21,7 +22,7 @@ function filterShoes(shoes) {
 }
 app.listen(3000)
 app.get('/all', function(req,res) {
-    let allSneaker = []
+    /*  let allSneaker = []
     const getProduct1 = new Promise(function(resolve,reject) {
         sneaks.getProducts("jordan", 1, function(err, products) {
             products = filterShoes(products);
@@ -40,7 +41,8 @@ app.get('/all', function(req,res) {
     Promise.all([getProduct1, getProduct2])
         .then(function() {
           res.send(allSneaker);
-        })
+        }) */
+        res.send(shoeModel)
     });
     
 app.get('/brand/:input', function(req,res) {
