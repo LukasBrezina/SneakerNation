@@ -6,7 +6,7 @@ xhr.onload = function() {
     if (xhr.status === 200) {
         let shoes = JSON.parse(xhr.responseText);
         const headerParagraph = document.createElement("p")
-        const title = document.createElement("h1")
+        const title = document.createElement("header")
         title.innerText = "SneakerNation"
         const title2 = document.createElement("h2");
         title2.innerText  = "Trends";

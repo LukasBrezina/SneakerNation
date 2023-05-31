@@ -1,27 +1,4 @@
-header {
-    text-align: center;
-    color: #95d4f4;
-    font-weight: bold;
-    font-size: 70px;
-}
-body{
-    background-color: lightcyan;
-    font-size: 18pt;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-.navigation {
-    position: fixed;
-    display: grid;
-    width: 200px;
-    background-color: lightgrey;
-}
-#navButton {
-    font-size: 15px;
-    padding: 10px 15px 10px 12px;
-}
-button:hover {
-    background-color: lightcyan;
-}
+@import url(base.css);
 
 #accButton {
     background-color: lightgrey;
@@ -45,7 +22,6 @@ button:hover {
     height: 200px;
 }
 .center {
-    margin: 0;
     position: absolute;
     top: 75%;
     left:50%;

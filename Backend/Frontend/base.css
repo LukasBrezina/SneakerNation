@@ -1,0 +1,69 @@
+body{
+    background-color: lightcyan;
+    font-size: 18pt;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+header {
+   text-align: center;
+   color: #95d4f4;
+   font-weight: bold;
+   font-size: 50px;
+}
+p {
+    text-align: center;
+    
+}
+h2 {
+    text-align: center;
+    font-weight: bold;
+}
+h3 {
+    text-align: center;
+}
+
+.navigation {
+    position:fixed;
+    display:grid;
+    width: 200px;
+    background-color: lightgrey;
+}
+
+
+#navButton {
+    font-size: 15px;
+    padding: 10px 15px 10px 12px;
+}
+
+button:hover {
+    background-color: lightcyan;
+}
+
+
+#shoeButton {
+    position: relative;
+    left: 46%;
+    padding: 10px 15px 10px 12px;
+    margin-top: 20px;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background-color: lightgrey;
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 18px;
+    border-color: black;
+    font-size: 13px;
+    color:  black;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#shoeButton:hover {
+    background-color: darkgray;
+}
+
+img {
+    height: 20%;
+    width: 20%;
+    border-style:solid;
+    border-width: 3px;
+    border-radius: 18px;
+    border-color: black;
+}

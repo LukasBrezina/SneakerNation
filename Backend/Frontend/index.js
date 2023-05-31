@@ -9,7 +9,7 @@ window.onload = function () {
       frontDiv.id = 'front';
 
       // Create h1 element
-      const h1 = document.createElement('h1');
+      const h1 = document.createElement('header');
       h1.textContent = 'SneakerNation';
       frontDiv.appendChild(h1);
 
@@ -21,7 +21,7 @@ window.onload = function () {
       // Create button element
       const button = document.createElement('button');
       button.textContent = 'Wishlist';
-      button.id = 'wishlistButton';
+      button.id = 'middleButton';
       button.onclick = function () {
         window.location.href = 'wishlist.html';
       };
@@ -43,7 +43,7 @@ window.onload = function () {
 
       const trendButton = document.createElement("button");
       trendButton.innerText = "Trending";
-      trendButton.id = "trendButton";
+      trendButton.id = "middleButton";
       trendButton.onclick = function() {
         window.location.href = 'trend.html';
       }
@@ -59,7 +59,7 @@ window.onload = function () {
 
       const allButton = document.createElement("button")
       allButton.textContent = 'All Sneaker';
-      allButton.id = "allButton";
+      allButton.id = "middleButton";
       allButton.onclick = function () {
         window.location.href = 'allShoes.html';
       };

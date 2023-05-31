@@ -1,25 +1,6 @@
-body{
-    background-color: lightcyan;
-}
-h1 {
-   text-align: center;
-   color: #95d4f4;
-   font-weight: bold;
-   font-size: 100px;
-   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
-}
-p {
-    text-align: center;
-    font-size: 30px;
-    font-family: 'Courier New', Courier, monospace;
-    
-}
-h2 {
-    text-align: center;
-    font-weight: bold;
-    font-size: 50px;
-}
-button:not(#navButton, #brandButton) {
+@import url(base.css);
+
+button:not(#navButton, #brandButton, #footerButton) {
     display:flex;
     justify-content: right;
     align-items: right;
@@ -35,40 +16,18 @@ button:not(#navButton, #brandButton) {
     font-family: monospace;
     
 } 
-button:hover {
-    background-color: lightcyan;
-}
 
-#wishlistButton {
+#middleButton {
+    justify-content: center;
     position: relative;
-    top: 50%;
-    left: 42%;
-    margin: 20px;
+    top:70%;
+    left: 50%;
+    margin-top: 50px;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }
-#trendButton {
-    position: relative;
-    top: 50%;
-    left: 43%;
-    margin: 20px;
-}
-
-#allButton {
-    position: relative;
-    top: 50%;
-    left: 41%;
-    margin: 20px;
-}
-
-.navigation {
-    position:fixed;
-    display:grid;
-    width: 200px;
-    background-color: lightgrey;
-}
-
-#navButton, #brandButton {
-    font-size: 15px;
-    padding: 10px 15px 10px 12px;
+#middleButton:hover {
+    background-color: darkgray;
 }
 
 img {
@@ -78,15 +37,18 @@ img {
     position: relative;
     display:flex;
     justify-content: center;
-    margin-left: 400px;
+    margin-left: 410px;
     border-radius: 90%;
 }
 
 footer {
-    font-size: 20px;
-    position: fixed;
-    background-color: darkgrey;
-    bottom: 50px;
+    display:flex;
+    position: absolute;
+    top:120%;
+    flex-direction: row;
+    column-gap: 16px;
+    justify-content: center;
+    font-size:12px;
 }
 ul {
     font-size:22px;
