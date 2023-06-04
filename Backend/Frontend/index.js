@@ -10,7 +10,7 @@ window.onload = function () {
 
       // Create h1 element
       const h1 = document.createElement('header');
-      h1.textContent = 'SneakerNation';
+      h1.textContent = 'SneakerNation'; 
       frontDiv.appendChild(h1);
 
       // Create p element
@@ -19,10 +19,10 @@ window.onload = function () {
       frontDiv.appendChild(p);
 
       // Create button element
-      const button = document.createElement('button');
-      button.textContent = 'Wishlist';
-      button.id = 'middleButton';
-      button.onclick = function () {
+      const button = document.createElement('button');e
+      button.textContent = 'Wishlist'; 
+      button.id = 'middleButton'; 
+      button.onclick = function () { 
         window.location.href = 'wishlist.html';
       };
       frontDiv.appendChild(button);
