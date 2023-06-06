@@ -33,7 +33,7 @@ h3 {
 }
 
 .navigation {
-    position:fixed;
+    position:relative;
     display:grid;
     width: 200px;
     background-color: lightgrey;
