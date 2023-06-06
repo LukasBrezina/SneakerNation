@@ -3,11 +3,22 @@ body{
     font-size: 18pt;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+body {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    justify-items: center; 
+  }
+  
+header {
+    grid-column: 1 / -1;
+  }
+
 header {
    text-align: center;
    color: #95d4f4;
    font-weight: bold;
-   font-size: 50px;
+   font-size: 40px;
 }
 p {
     text-align: center;
@@ -26,6 +37,13 @@ h3 {
     display:grid;
     width: 200px;
     background-color: lightgrey;
+}
+
+.account {
+    position:fixed;
+    display: grid;
+    margin-left: 80%;
+    transform: translate(50px,-20px);
 }
 
 

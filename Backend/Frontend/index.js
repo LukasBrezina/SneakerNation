@@ -3,20 +3,10 @@ window.onload = function () {
     xhr.onload = function () {
       const bodyElement = document.querySelector("body");
       if (xhr.status == 200) {
-      
+      let article = document.createElement("article");
       // Create div element front
       const frontDiv = document.createElement('div');
       frontDiv.id = 'front';
-
-      // Create h1 element
-      const h1 = document.createElement('header');
-      h1.textContent = 'SneakerNation'; 
-      frontDiv.appendChild(h1);
-
-      // Create p element
-      const p = document.createElement('p');
-      p.textContent = '"Every Sneaker you can dream of"';
-      frontDiv.appendChild(p);
 
       // Create button element
       const button = document.createElement('button');e
@@ -64,7 +54,10 @@ window.onload = function () {
         window.location.href = 'allShoes.html';
       };
       allDiv.appendChild(allButton);
-      bodyElement.appendChild(allDiv);
+      article.appendChild(frontDiv);
+      article.appendChild(trendsDiv);
+      article.appendChild(allDiv);
+      bodyElement.appendChild(article);
 
       } else {
         bodyElement.append(
