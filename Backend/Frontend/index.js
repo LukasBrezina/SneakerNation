@@ -8,21 +8,11 @@ window.onload = function () {
       const frontDiv = document.createElement('div');
       frontDiv.id = 'front';
 
-      // Create h1 element
-      /*const h1 = document.createElement('header');
-      h1.textContent = 'SneakerNation';
-      frontDiv.appendChild(h1);
-
-      // Create p element
-      const p = document.createElement('p');
-      p.textContent = '"Every Sneaker you can dream of"';
-      frontDiv.appendChild(p); */
-
       // Create button element
-      const button = document.createElement('button');
-      button.textContent = 'Wishlist';
-      button.id = 'middleButton';
-      button.onclick = function () {
+      const button = document.createElement('button');e
+      button.textContent = 'Wishlist'; 
+      button.id = 'middleButton'; 
+      button.onclick = function () { 
         window.location.href = 'wishlist.html';
       };
       frontDiv.appendChild(button);
