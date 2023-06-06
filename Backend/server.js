@@ -6,8 +6,6 @@ const app = express()
 const SneaksAPI = require('sneaks-api')
 const sneaks = new SneaksAPI()
 const shoeModel  = require('./shoe-model.js')
-const app = express();
-const path = require('path');
 const bodyParser = require("body-parser");
 //SzauleLogin/server/backendLoginAdmin.js
 const backendLoginAdmin = require('./backendLoginAdmin');
@@ -36,11 +34,6 @@ app.get('/', (req, res) => {
 app.use(bodyParser.json());
 
 // 
-
-const PORT = 3000; 
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
 
 app.listen(3000)
 app.get('/all', function(req,res) {

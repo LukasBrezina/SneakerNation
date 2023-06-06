@@ -10,7 +10,7 @@ app.use(express.static(path.join(__dirname, 'files')));
 
 // Handle GET request for the root URL
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'files', '.html'));
+  res.sendFile(path.join(__dirname, 'files', 'index.html'));
 });
 
 // Body parser middleware

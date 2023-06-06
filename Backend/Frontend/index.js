@@ -9,7 +9,7 @@ window.onload = function () {
       frontDiv.id = 'front';
 
       // Create button element
-      const button = document.createElement('button');e
+      const button = document.createElement('button');
       button.textContent = 'Wishlist'; 
       button.id = 'middleButton'; 
       button.onclick = function () { 
