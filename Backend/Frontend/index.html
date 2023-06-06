@@ -7,13 +7,11 @@
     <link rel="stylesheet" href="index.css" />
     <script type ="module" src="index.js"></script>
   </head>
-  <header>
-    <h1>SneakerNation</h1>
-    <p>
-      "Every Sneaker you can dream of"
-    </p>
-  </header>
+  
   <body>
+    
+
+    <body style="background-color: rgba(64, 224, 218, 0.387);">
     <div class = "navigation">
       <button id="navButton" onclick="window.location.href = 'index.html';"> Homepage</button>
       <button id="navButton" onclick="window.location.href = 'allShoes.html';"> All Products </button>
@@ -26,13 +24,12 @@
         <li><button id="brandButton">Nike</button></li>
       </ul>
     </div>
-      <div class = "account">
-        <h3 id="account">Account</h3>
-        <select name="accountManage" id="account">
-         <option value="create"><button id="accountButtons" onclick="window.location.href='account.html'">Create Account</button></option>
-         <option value="login"><button id="accountButtons"> Log in</button></option>
-       </select>
-      </div>
+
+  
+<!-- //SzauleLogin/server/backendLoginAdmin.js-->
+    <iframe src="frontLogForm.html"  frameborder="0" style="width: 100%; height: 500px;"  name="loginFrame"></iframe>
+
+
     <footer>
       <ul> 
         <li><button id="footerButton">Terms and Conditions</button></li>
@@ -41,3 +38,4 @@
     </footer>
   </body>
 </html>
+
