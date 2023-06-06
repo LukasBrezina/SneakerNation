@@ -21,7 +21,7 @@ button:not(#navButton, #brandButton, #footerButton) {
     justify-content: center;
     position: relative;
     top:70%;
-    left: 50%;
+    left: 100%;
     margin-top: 50px;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
@@ -37,7 +37,7 @@ img {
     position: relative;
     display:flex;
     justify-content: center;
-    margin-left: 410px;
+    left:80%;
     border-radius: 90%;
 }
 
@@ -53,4 +53,8 @@ footer {
 ul {
     font-size:22px;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+h2 {
+    position: relative;
+    left:50%;
 }

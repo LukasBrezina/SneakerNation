@@ -70,7 +70,7 @@ app.get('/brand/:input', function(req,res) {
 })
 
 app.get('/trends', function(req,res) {
-    sneaks.getMostPopular(5, function(err,products) {
+    sneaks.getMostPopular(6, function(err,products) {
         products = filterShoes(products);
         res.send(products);
     })

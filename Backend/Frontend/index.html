@@ -7,7 +7,12 @@
     <link rel="stylesheet" href="index.css" />
     <script type ="module" src="index.js"></script>
   </head>
-  
+  <header>
+    <h1>SneakerNation</h1>
+    <p>
+      "Every Sneaker you can dream of"
+    </p>
+  </header>
   <body>
     <div class = "navigation">
       <button id="navButton" onclick="window.location.href = 'index.html';"> Homepage</button>
@@ -21,6 +26,13 @@
         <li><button id="brandButton">Nike</button></li>
       </ul>
     </div>
+      <div class = "account">
+        <h3 id="account">Account</h3>
+        <select name="accountManage" id="account">
+         <option value="create"><button id="accountButtons" onclick="window.location.href='account.html'">Create Account</button></option>
+         <option value="login"><button id="accountButtons"> Log in</button></option>
+       </select>
+      </div>
     <footer>
       <ul> 
         <li><button id="footerButton">Terms and Conditions</button></li>

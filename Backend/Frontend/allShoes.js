@@ -5,15 +5,16 @@ xhr.onload = function() {
     const bodyElement = document.querySelector("body");
     if (xhr.status === 200) {
         let shoes = JSON.parse(xhr.responseText);
-        const headerParagraph = document.createElement("p")
+        /* const headerParagraph = document.createElement("p")
         const title = document.createElement("header")
         title.innerText = "SneakerNation"
         headerParagraph.append(title)
-        bodyElement.appendChild(headerParagraph)
+        bodyElement.appendChild(headerParagraph)  */
         for (const shoe of shoes) {
             for (const sneaker of shoe) {
+                
                 // article
-                let article = document.createElement("article")
+                let article = document.createElement("article");
                 // product name
                 var name = document.createElement("h2");
                 name.innerText = sneaker.shoeName;
