@@ -33,9 +33,9 @@ app.get('/', (req, res) => {
 // Body parser middleware
 app.use(bodyParser.json());
 
-// 
 
-app.listen(3000)
+app.listen(3000);
+
 app.get('/all', function(req,res) {
     let allSneaker = []
     const getProduct1 = new Promise(function(resolve,reject) {

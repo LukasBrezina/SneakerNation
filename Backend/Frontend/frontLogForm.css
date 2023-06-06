@@ -1,7 +1,9 @@
+
 body {
-    font-family: Arial, sans-serif;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 20px;
+    background-color: lightcyan;
   }
   
 
@@ -14,11 +16,12 @@ body {
   }
 
 
-  h1 {
+  header {
     text-align: center;
-    
     font-size: 22px;
+
   }
+  
   
   form {
     max-width: 300px;
@@ -127,7 +130,6 @@ body {
     background-color: #f8f8f8;
   }
   
-  @import url(base.css);
 
   .container {
     display: grid;
@@ -148,13 +150,9 @@ body {
 
 .register {
   margin-right: auto;
-  margin-bottom: 0;
+  margin-bottom: 20px;
 }
 
-.login {
-  margin-left: auto;
-  margin-bottom: 0;
-}
 .center {
     position: absolute;
     top: 75%;
@@ -162,3 +160,27 @@ body {
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
   }
+
+  .navigation {
+    position:fixed;
+    display:grid;
+    width: 200px;
+    background-color: lightgrey;
+    top: 1%;
+    left:0.5%;
+}
+
+#navButton {
+  font-size: 15px;
+  padding: 10px 15px 10px 12px;
+}
+
+button:hover {
+  background-color: lightcyan;
+}
+
+ul {
+  font-size:22px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+

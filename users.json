@@ -1,82 +1,18 @@
 [
   {
-    "username": "user1",
-    "password": "password1"
+    "username": "test1",
+    "password": "test1"
   },
   {
-    "username": "user2",
-    "password": "password2"
+    "username": "test2",
+    "password": "test2"
   },
   {
-    "username": "2",
-    "password": "1"
+    "username": "test3",
+    "password": "test3"
   },
   {
-    "username": "Zen",
-    "password": "1"
-  },
-  {
-    "username": "1",
-    "password": "1"
-  },
-  {
-    "username": "John Smith",
-    "password": "1"
-  },
-  {
-    "username": "3",
-    "password": "1"
-  },
-  {
-    "username": "4",
-    "password": "1"
-  },
-  {
-    "username": "7",
-    "password": "1"
-  },
-  {
-    "username": "6",
-    "password": "1"
-  },
-  {
-    "username": "8",
-    "password": "1"
-  },
-  {
-    "username": "9",
-    "password": "1"
-  },
-  {
-    "username": "10",
-    "password": "1"
-  },
-  {
-    "username": "smith@microsoft.com",
-    "password": "1"
-  },
-  {
-    "username": "11",
-    "password": "1"
-  },
-  {
-    "username": "12",
-    "password": "1"
-  },
-  {
-    "username": "111",
-    "password": "1"
-  },
-  {
-    "username": "freerunningbit@gmail.com",
-    "password": "1"
-  },
-  {
-    "username": "smith.j@microsoft.com",
-    "password": "1"
-  },
-  {
-    "username": "Hello",
-    "password": "dwdwd"
+    "username": "test4",
+    "password": "test4"
   }
 ]

@@ -72,6 +72,8 @@ document.getElementById("submitButton").addEventListener("click", function() {
 
     document.getElementById("myForm").reset();
     output.scrollTop = output.scrollHeight;
+    alert("Your Package will be delivered in the next few days. Thank you for your purchase at SneakerNation.");
+    window.top.location.href = 'index.html';
   });
 
   document.getElementById("addFieldButton").addEventListener("click", function() {
