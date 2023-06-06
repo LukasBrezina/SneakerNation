@@ -9,10 +9,10 @@ window.onload = function () {
       frontDiv.id = 'front';
 
       // Create button element
-      const button = document.createElement('button');e
-      button.textContent = 'Wishlist'; 
-      button.id = 'middleButton'; 
-      button.onclick = function () { 
+      const button = document.createElement('button');
+      button.textContent = 'Wishlist';
+      button.id = 'middleButton';
+      button.onclick = function () {
         window.location.href = 'wishlist.html';
       };
       frontDiv.appendChild(button);
