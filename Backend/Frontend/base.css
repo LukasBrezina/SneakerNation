@@ -101,9 +101,7 @@ img {
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 
-#middleButton:hover {
-    background-color: darkgray;
-}
+
 }
 
 #left-menu-container {
@@ -129,7 +127,7 @@ img {
     background-color: darkgray;
 }
 
-button:not(#navButton, #brandButton, #footerButton) {
+button:not(#navButton, #brandButton, #footerButton, #shoeButton) {
     display:flex;
     justify-content: right;
     align-items: right;
