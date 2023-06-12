@@ -1,9 +1,14 @@
+
+
 const express = require('express');
 const path = require('path')
 const app = express()
 const SneaksAPI = require('sneaks-api')
 const sneaks = new SneaksAPI()
 const shoeModel  = require('./shoe-model.js')
+const bodyParser = require("body-parser");
+//SzauleLogin/server/backendLoginAdmin.js
+const backendLoginAdmin = require('./backendLoginAdmin');
 
 app.use(express.static(path.join(__dirname, 'Frontend')));
 
@@ -20,8 +25,17 @@ function filterShoes(shoes) {
     })
     return filtered;
 }
+// Handle GET request for the root URL
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'Frontend', 'index.html'));
+});
 
-app.listen(3000)
+// Body parser middleware
+app.use(bodyParser.json());
+
+
+app.listen(3000);
+
 app.get('/all', function(req,res) {
     let allSneaker = []
     const getProduct1 = new Promise(function(resolve,reject) {
@@ -53,14 +67,14 @@ app.get('/all', function(req,res) {
             resolve();
         })
       })
-    
+
     Promise.all([getProduct1, getProduct2, getProduct3, getProduct4])
         .then(function() {
           res.send(allSneaker);
         }) 
         // res.send(shoeModel) <- look shoe-model.js for context
     });
-    
+
 app.get('/brand/:input', function(req,res) {
     const brand = req.params.input;
     sneaks.getProducts(brand, 6, function(err,products) {
@@ -75,5 +89,10 @@ app.get('/trends', function(req,res) {
         res.send(products);
     })
 })
+
+//SzauleLogin/server/backendLoginAdmin.jse
+app.post('/api/login', backendLoginAdmin.handleLogin);
+app.post('/api/register', backendLoginAdmin.handleRegistration);
+
 
 console.log("Server now listening on http://localhost:3000/")

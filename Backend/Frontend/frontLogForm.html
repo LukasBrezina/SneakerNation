@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Registration and Login</title>
+  <link rel="stylesheet" href="frontLogForm.css">
+  
+  <style>
+      </style>
+</head>
+<header>
+  <h1> SneakerNation  </h1>
+  <p> Create your personal Account here!</p>
+</header>
+<body>
+
+
+  <div class = "navigation"> 
+    <button id="navButton" onclick="window.location.href = 'index.html';"> Homepage</button>
+    <button id="navButton" onclick="window.location.href = 'allShoes.html';"> All Products </button>
+    <button id="navButton" onclick="window.location.href = 'trend.html';"> Trending </button>
+    <button id="navButton" onclick="window.location.href = 'frontLogForm.html';"> Account </button>
+    <ul>Brands
+    </ul>
+</div>
+
+  <form id="userForm">
+
+    <div class="container">
+      <h2 class="register">Register or Login here:</h2>
+      <br>
+    </div>
+    
+    <label for="username">Username or Email address:</label>
+    <input type="text" id="username" required><br>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" required><br>
+
+    <div class="container">
+    <button type="submit" id="registerButton">Register</button>
+             
+    <button type="submit" id="loginButton">Login</button>
+    
+  </div>
+  </form>
+
+  <script src="frontLogForm.js"></script>
+</body>
+</html>

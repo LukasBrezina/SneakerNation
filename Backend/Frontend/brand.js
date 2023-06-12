@@ -1,12 +1,12 @@
 
 const xhr = new XMLHttpRequest();
-xhr.open("GET", "/trends");
+xhr.open("GET", `/brand/${brand}`);
 xhr.onload = function() {
     const bodyElement = document.querySelector("body");
     if (xhr.status === 200) {
-        let shoes = JSON.parse(xhr.responseText);
+        let shoes = JSON.parse(xhr.responseText);        
         for (const sneaker of shoes) {
-             
+            
             // article
             let article = document.createElement("article");
             // product name
@@ -46,7 +46,7 @@ xhr.onload = function() {
             article.append(button);
             article.append(button2);
             bodyElement.appendChild(article);
+            }
         }
     }
-}
 xhr.send();
