@@ -3,6 +3,7 @@ body {
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 10px;
     justify-items: center; 
+    background-color: #2d4fbc;
   }
   
 header {
@@ -17,11 +18,13 @@ header {
 }
 p {
     text-align: center;
+    color: white;
     
 }
 h2 {
     text-align: center;
     font-weight: bold;
+    color:lightgray;
 }
 h3 {
     text-align: center;
