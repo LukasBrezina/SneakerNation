@@ -1,7 +1,7 @@
 window.onload = function () {
     const xhr = new XMLHttpRequest();
     xhr.onload = function () {
-      const bodyElement = document.querySelector("body");
+     /* const bodyElement = document.querySelector("body");
       if (xhr.status == 200) {
       let article = document.createElement("article");
       // Create div element front
@@ -66,7 +66,7 @@ window.onload = function () {
             " - " +
             xhr.statusText
         );
-      }
+      } */
     };
     xhr.open("GET", "/");
     xhr.send();

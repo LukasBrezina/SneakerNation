@@ -70,9 +70,6 @@ button:hover {
 }
 #shoeButton:hover {
     background-color: darkgray;
-<<<<<<< HEAD
-}
-=======
 }
 
 img {
@@ -141,4 +138,3 @@ button:not(#navButton, #brandButton, #footerButton, #shoeButton) {
     font-family: monospace;
     
 } 
->>>>>>> 328dcf3b8396669dc9a995072a228cae25852f47
