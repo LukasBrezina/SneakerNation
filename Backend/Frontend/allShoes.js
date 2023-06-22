@@ -2,7 +2,7 @@
 const xhr = new XMLHttpRequest();
 xhr.open("GET", "/all");
 xhr.onload = function() {
-    const bodyElement = document.querySelector("body");
+    const bodyElement = document.getElementById("allShoesDiv");
     if (xhr.status === 200) {
         let shoes = JSON.parse(xhr.responseText);
         for (const shoe of shoes) {
@@ -32,7 +32,6 @@ xhr.onload = function() {
                 // append to paragraphs
                 infoParagraph.innerHTML = brand + "<br>"+ price + "<br>";
                 infoParagraph.append(dateSpan);
-                picParagraph.append(pic);
                 // create buttons for wishlist and cart
                 var button = document.createElement("button");
                 button.innerText = "Add to Wishlist";
@@ -42,7 +41,7 @@ xhr.onload = function() {
                 button2.id = "shoeButton";
                 // append everything to article, then to bodyElement
                 article.append(name);
-                article.append(picParagraph);
+                article.append(pic);
                 article.append(infoParagraph);
                 article.append(button);
                 article.append(button2);

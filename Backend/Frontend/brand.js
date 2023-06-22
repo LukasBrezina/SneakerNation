@@ -1,10 +1,14 @@
-
 const xhr = new XMLHttpRequest();
+const urlParams = new URLSearchParams(window.location.search);
+const brand = urlParams.get('brand');
+const brandTitleElement = document.querySelector('#brandTitle');
+brandTitleElement.textContent = brand.charAt(0).toUpperCase() + brand.slice(1);
 xhr.open("GET", `/brand/${brand}`);
+console.log("Brand Name:", brand); // Log the brand name
 xhr.onload = function() {
-    const bodyElement = document.querySelector("body");
+    const bodyElement = document.getElementById("brandProductsDiv");
     if (xhr.status === 200) {
-        let shoes = JSON.parse(xhr.responseText);        
+        let shoes = JSON.parse(xhr.responseText);
         for (const sneaker of shoes) {
             
             // article
@@ -14,7 +18,6 @@ xhr.onload = function() {
             name.innerText = sneaker.shoeName;
             // paragraphs
             let infoParagraph = document.createElement("p");
-            let picParagraph = document.createElement("p");
             // thumbnail
             var pic = document.createElement("img");
             pic.setAttribute("src", sneaker.thumbnail);
@@ -31,7 +34,6 @@ xhr.onload = function() {
             // append to paragraphs
             infoParagraph.innerHTML = brand + "<br>"+ price + "<br>";
             infoParagraph.append(dateSpan);
-            picParagraph.append(pic);
             // create buttons for wishlist and cart
             var button = document.createElement("button");
             button.innerText = "Add to Wishlist";
@@ -41,7 +43,7 @@ xhr.onload = function() {
             button2.id = "shoeButton";
             // append everything to article, then to bodyElement
             article.append(name);
-            article.append(picParagraph);
+            article.append(pic);
             article.append(infoParagraph);
             article.append(button);
             article.append(button2);

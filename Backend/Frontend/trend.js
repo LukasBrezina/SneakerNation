@@ -2,7 +2,7 @@
 const xhr = new XMLHttpRequest();
 xhr.open("GET", "/trends");
 xhr.onload = function() {
-    const bodyElement = document.querySelector("body");
+    const bodyElement = document.getElementById("trendShoes");
     if (xhr.status === 200) {
         let shoes = JSON.parse(xhr.responseText);
         for (const sneaker of shoes) {

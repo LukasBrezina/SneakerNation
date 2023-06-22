@@ -1,4 +1,10 @@
 body {
+    display: flex;
+    flex-direction: column;
+    background-color: #2d4fbc;
+}
+
+grid-products {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 20px;
@@ -20,7 +26,6 @@ body {
 }
 h3 {
     position:relative;
-    left: -32%;
     color: white;
 }
 
@@ -82,6 +87,7 @@ button:hover {
 #shoeButton:hover {
     background-color: darkgray;
 }
+
 
 button:not(#navButton, #shoeButton, .navbar-toggler) {
     display: flex;
