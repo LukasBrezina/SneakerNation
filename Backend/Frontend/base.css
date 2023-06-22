@@ -1,42 +1,53 @@
 body {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 10px;
-    justify-items: center; 
+    grid-gap: 20px;
+    padding: 1%;
+    grid-template-areas:
+    "p"
+    "h2"
+    "h3"
+    "img"
+    "button1 button2";
+    justify-items: center;
     background-color: #2d4fbc;
-  }
-  
-header {
-    grid-column: 1 / -1;
-  }
+}
 
-header {
-   text-align: center;
-   color: #95d4f4;
-   font-weight: bold;
-   font-size: 40px;
-}
-p {
-    text-align: center;
+.touch_taital { /* this is the header text */
+    position: relative;
+    left: -50%;
     color: white;
-    
 }
+h3 {
+    position:relative;
+    left: -32%;
+    color: white;
+}
+
+p {
+    grid-area: p;
+    justify-self: right; 
+    color: white;
+}
+
 h2 {
     text-align: center;
     font-weight: bold;
-    color:lightgray;
-}
-h3 {
-    text-align: center;
-}
-
-.navigation {
-    position:fixed;
-    display:grid;
-    width: 200px;
-    background-color: lightgrey;
+    grid-area: h2;
+    justify-content: center;
+    color: lightgray;
 }
 
+img {
+    grid-area: img;
+    justify-self: center;
+    height: 40%;
+    width: 40%;
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 18px;
+    border-color: black;
+}
 .account {
     position:fixed;
     display: grid;
@@ -56,12 +67,9 @@ button:hover {
 
 
 #shoeButton {
-    position: relative;
-    left: 46%;
+    grid-area: button2;
+    justify-content: center;
     padding: 10px 15px 10px 12px;
-    margin-top: 20px;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
     background-color: lightgrey;
     border-style: solid;
     border-width: 3px;
@@ -75,58 +83,8 @@ button:hover {
     background-color: darkgray;
 }
 
-img {
-    height: 20%;
-    width: 20%;
-    border-style:solid;
-    border-width: 3px;
-    border-radius: 18px;
-    border-color: black;
-}
-
-#left-menu-frame {
-    width: 100%;
-    height: 100%;
-  float: left;
-  margin: 0;
-  padding: 0;
-  display: flex;
-    justify-content: center;
-    position: relative;
-    top:70%;
-    left: 100%;
-    margin-top: 50px;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-
-
-}
-
-#left-menu-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: 250px;
-    overflow: hidden; 
-}
-    
-
-#middleButton {
-    justify-content: center;
-    position: relative;
-    top:70%;
-    left: 100%;
-    margin-top: 50px;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-}
-#middleButton:hover {
-    background-color: darkgray;
-}
-
-button:not(#navButton, #brandButton, #footerButton, #shoeButton) {
-    display:flex;
+button:not(#navButton, #shoeButton, .navbar-toggler) {
+    display: flex;
     justify-content: right;
     align-items: right;
     padding: 10px 15px 10px 12px;
@@ -137,7 +95,7 @@ button:not(#navButton, #brandButton, #footerButton, #shoeButton) {
     border-color: black;
     font-size: 25px;
     font-weight: 900;
-    color:  black;
+    color: black;
     font-family: monospace;
-    
-} 
+}
+
