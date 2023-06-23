@@ -3,6 +3,16 @@ const app = express();
 const path = require('path');
 const bodyParser = require("body-parser");
 const fs = require('fs');
+const jwt = require('jsonwebtoken');
+
+// generate random hash for jwt
+const crypto = require('crypto');
+
+function generateSecretKey(length) {
+  return crypto.randomBytes(length).toString('hex');
+}
+const secret = generateSecretKey(32);
+
 const storeUsersOnServer = 'users.json';
 
 // Serve static files
@@ -29,7 +39,8 @@ function handleLogin(req, res) {
 
   if (user) {
     // Successful login
-    res.json({ success: true });
+    const token = jwt.sign({ username: user.username }, secret, { expiresIn: '336h' }); // Creates a token that expires in 2 weeks
+    res.json({ success: true, token: token});
   } else {
     // Invalid login
     res.status(401).json({ success: false, message: "Invalid username or password." });
@@ -53,8 +64,8 @@ function handleRegistration(req, res) {
     users.push(newUser);
 
     saveUserData(); // Save user data immediately after registration
-
-    res.json({ success: true, message: "User registration successful." });
+    const token = jwt.sign({ username: newUser.username }, secret, { expiresIn: '336h' }); // Creates a token that expires in 2 weeks
+    res.json({ success: true, message: "User registration successful.", token:token });
     console.log(users);
   }
 }
@@ -97,4 +108,5 @@ module.exports = {
   handleLogin,
   handleRegistration,
   loadUserData,
+  secret
 };

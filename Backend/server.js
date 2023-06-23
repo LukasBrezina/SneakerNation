@@ -5,10 +5,10 @@ const path = require('path')
 const app = express()
 const SneaksAPI = require('sneaks-api')
 const sneaks = new SneaksAPI()
-const shoeModel  = require('./shoe-model.js')
 const bodyParser = require("body-parser");
 //SzauleLogin/server/backendLoginAdmin.js
 const backendLoginAdmin = require('./backendLoginAdmin');
+const jwt = require('jsonwebtoken');
 
 app.use(express.static(path.join(__dirname, 'Frontend')));
 
@@ -39,7 +39,7 @@ app.listen(3000);
 app.get('/all', function(req,res) {
     let allSneaker = []
     const getProduct1 = new Promise(function(resolve,reject) {
-        sneaks.getProducts("jordan", 5, function(err, products) {
+        sneaks.getProducts("jordan", 6, function(err, products) {
             products = filterShoes(products);
             allSneaker.push(products);
             resolve();
@@ -47,21 +47,21 @@ app.get('/all', function(req,res) {
      });
 
     const getProduct2 = new Promise(function(resolve,reject) {
-        sneaks.getProducts("yeezy", 5, function(err, products) {
+        sneaks.getProducts("yeezy", 6, function(err, products) {
             products = filterShoes(products);
             allSneaker.push(products)
             resolve();
         });
       });
       const getProduct3 = new Promise(function(resolve,reject) {
-        sneaks.getProducts("nike", 5, function(err, products) {
+        sneaks.getProducts("nike", 6, function(err, products) {
             products = filterShoes(products);
             allSneaker.push(products)
             resolve();
         });
       });
       const getProduct4 = new Promise(function(resolve,reject) {
-        sneaks.getProducts("balance", 5, function(err, products) {
+        sneaks.getProducts("balance", 6, function(err, products) {
             products = filterShoes(products);
             allSneaker.push(products);
             resolve();
@@ -94,5 +94,22 @@ app.get('/trends', function(req,res) {
 app.post('/api/login', backendLoginAdmin.handleLogin);
 app.post('/api/register', backendLoginAdmin.handleRegistration);
 
+app.get('/api/verify', (req, res) => {
+    const authHeader = req.headers.authorization;
+    const token = authHeader && authHeader.split(' ')[1];
+  
+    if (token == null) {
+      return res.sendStatus(401);
+    }
+  
+    jwt.verify(token, backendLoginAdmin.secret, (err, user) => {
+      if (err) {
+        console.log(err);
+        return res.sendStatus(403);
+      }
+  
+      res.json({ success: true, user: user });
+    });
+  });
 
 console.log("Server now listening on http://localhost:3000/")

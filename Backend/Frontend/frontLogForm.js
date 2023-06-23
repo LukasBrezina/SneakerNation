@@ -27,11 +27,11 @@ function registerUser(username, password) {
   .then(response => response.json())
   .then(data => {
     if (data.success) {
+      localStorage.setItem('token', data.token);
       alert("User registration successful!");
       clearForm();
       // Redirect to postalEtiquette.html
-
-
+  
       window.top.location.href = "postalEtiquette.html";
     } else {
       alert("User registration failed: " + data.message);
@@ -41,12 +41,6 @@ function registerUser(username, password) {
     console.error("Error:", error);
   });
 }
-
-
-
-
-
-
 
 
   // Login user function
@@ -62,8 +56,11 @@ function registerUser(username, password) {
     .then(response => response.json())
     .then(data => {
       if (data.success) {
+        localStorage.setItem('token', data.token);
+        console.log(data);
         alert("Login successful!");
         clearForm();
+        window.location.href = "/";
       } else {
         alert("Login failed: " + data.message);
       }
