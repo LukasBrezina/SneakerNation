@@ -1,4 +1,4 @@
-// method checks if token is valid, if so relocate to homepage, else delete token
+// method checks if token is invalid, if invalid catch and relocate to homepage
 
 function verifyJWT() {
 
@@ -10,15 +10,8 @@ function verifyJWT() {
       }
     })
     .then(response => response.json())
-    .then(data => {
-      if (data.success) {
-        window.location.href = '/';
-
-      } else {
-        localStorage.removeItem('token');
-      }
-    })
     .catch(error => {
+      window.location.href = '/';
       console.error("Error:", error);
     });
   }

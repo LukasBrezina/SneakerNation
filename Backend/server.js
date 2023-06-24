@@ -1,5 +1,4 @@
 
-
 const express = require('express');
 const path = require('path')
 const app = express()
@@ -20,7 +19,8 @@ function filterShoes(shoes) {
             // colorWay: item.colorWay,
             price: item.retailPrice,
             thumbnail: item.thumbnail,
-            releaseDate: item.releaseDate
+            releaseDate: item.releaseDate,
+            id: item._id
         }
     })
     return filtered;
@@ -72,7 +72,6 @@ app.get('/all', function(req,res) {
         .then(function() {
           res.send(allSneaker);
         }) 
-        // res.send(shoeModel) <- look shoe-model.js for context
     });
 
 app.get('/brand/:input', function(req,res) {
@@ -111,5 +110,27 @@ app.get('/api/verify', (req, res) => {
       res.json({ success: true, user: user });
     });
   });
+
+ // Endpoints for Wishlist and Shopping Cart
+
+ // Store wishlist of each user
+app.put('/api/addWishlist', backendLoginAdmin.addItemWishlist);
+
+// Store shopping cart of each user
+app.put('/api/addShoppingCart', backendLoginAdmin.addItemShoppingCart);
+
+// Delete item from wishlist
+app.delete('/api/deleteWishlist', backendLoginAdmin.deleteItemWishlist);
+
+// Delete item from shopping cart
+app.delete('/api/deleteShoppingCart', backendLoginAdmin.deleteItemShoppingCart);
+
+// Get shopping cart of specific user
+app.get('/api/getShoppingCart', backendLoginAdmin.getShoppingCart);
+
+// Get wishlist of specific user
+app.get('/api/getWishlist', backendLoginAdmin.getWishlist);
+
+
 
 console.log("Server now listening on http://localhost:3000/")

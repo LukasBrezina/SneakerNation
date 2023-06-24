@@ -3,7 +3,7 @@ body {
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 20px;
-    /*background-color: #2d4fbc;*/
+    background-color: #2d4fbc;
   }
   
 
@@ -21,6 +21,13 @@ body {
     font-size: 22px;
 
   }
+
+  h1,p,h2 {
+    color:white;
+  }
+  h1 {
+    font-size: 40px;
+  }
   
   
   form {
@@ -31,6 +38,7 @@ body {
   label {
     display: block;
     margin-bottom: 10px;
+    color:white;
   }
   
   input[type="text"],
@@ -156,10 +164,6 @@ body {
 #navButton {
   font-size: 15px;
   padding: 10px 15px 10px 12px;
-}
-
-button:hover {
-  background-color: lightcyan;
 }
 
 ul {

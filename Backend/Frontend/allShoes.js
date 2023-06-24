@@ -1,3 +1,5 @@
+import { addToCart, addToWL } from "./personal.js";
+
 
 const xhr = new XMLHttpRequest();
 xhr.open("GET", "/all");
@@ -10,14 +12,17 @@ xhr.onload = function() {
                 
                 // article
                 let article = document.createElement("article");
+                article.className = "shoe";
                 // product name
                 var name = document.createElement("h2");
                 name.innerText = sneaker.shoeName;
+                name.className = "shoe-name"
                 // paragraphs
                 let infoParagraph = document.createElement("p");
-                let picParagraph = document.createElement("p");
+                infoParagraph.className = "shoe-p";
                 // thumbnail
                 var pic = document.createElement("img");
+                pic.className = "shoe-img";
                 pic.setAttribute("src", sneaker.thumbnail);
                 // infoParagraph content
                 var brand = "Brand:  " + sneaker.brand;
@@ -35,10 +40,10 @@ xhr.onload = function() {
                 // create buttons for wishlist and cart
                 var button = document.createElement("button");
                 button.innerText = "Add to Wishlist";
-                button.id = "shoeButton";
+                button.className = "add-to-wl";
                 var button2 = document.createElement("button");
                 button2.innerText = "Add to Cart";
-                button2.id = "shoeButton";
+                button2.className = "add-to-cart";
                 // append everything to article, then to bodyElement
                 article.append(name);
                 article.append(pic);
@@ -48,6 +53,16 @@ xhr.onload = function() {
                 bodyElement.appendChild(article);
             }
         }
+        const addToCartButtons = document.querySelectorAll('.shoe .add-to-cart');
+        addToCartButtons.forEach(button => {
+        button.addEventListener('click', addToCart); 
+        }); 
+
+        const addToWLButtons = document.querySelectorAll('.shoe .add-to-wl');
+        addToWLButtons.forEach(button => {
+        button.addEventListener('click', addToWL);
+        })
+
     }
 }
 xhr.send();

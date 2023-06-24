@@ -66,7 +66,6 @@ function handleRegistration(req, res) {
     saveUserData(); // Save user data immediately after registration
     const token = jwt.sign({ username: newUser.username }, secret, { expiresIn: '336h' }); // Creates a token that expires in 2 weeks
     res.json({ success: true, message: "User registration successful.", token:token });
-    console.log(users);
   }
 }
 
@@ -102,9 +101,214 @@ function loadUserData() {
   });
 }
 
+// get wishlist for a user
+function getWishlist(req,res) {
+  const authHeader = req.headers.authorization;
+  const token = authHeader && authHeader.split(' ')[1];
+  let username;
+
+  if (token == null) {
+    return res.sendStatus(401);
+  }
+
+  jwt.verify(token, secret, (err, user) => {
+    if (err) {
+      console.log(err);
+      return res.sendStatus(403);
+    }
+    username = user.username;
+  });
+  
+  const user = users.find((user) => user.username === username);
+
+  if (user) {
+    res.json({ success: true, wishlist: user.wishlist });
+  } else {
+    
+    res.status(404).json({ success: false, message: "User not found." });
+  }
+}
+
+// same as getWishlist but with shopping cart
+function getShoppingCart(req,res) {
+  const authHeader = req.headers.authorization;
+  const token = authHeader && authHeader.split(' ')[1];
+  let username;
+
+  if (token == null) {
+    return res.sendStatus(401);
+  }
+
+  jwt.verify(token, secret, (err, user) => {
+    if (err) {
+      console.log(err);
+      return res.sendStatus(403);
+    }
+    username = user.username;
+  });
+  
+  const user = users.find((user) => user.username === username);
+
+  if (user) {
+    res.json({ success: true, shoppingCart: user.shoppingCart });
+  } else {
+   
+    res.status(404).json({ success: false, message: "User not found." });
+  }
+}
+
+// add an shoe to the shopping cart
+function addItemShoppingCart(req,res) {
+  const token = req.body.token;
+  const shoppingCart = req.body.shoppingCart;
+  let username;
+
+  if (token == null) {
+    return res.sendStatus(401);
+  }
+
+  jwt.verify(token, secret, (err, user) => {
+    if (err) {
+      console.log(err);
+      return res.sendStatus(403);
+    }
+    username = user.username;
+  });
+
+  const user = users.find((user) => user.username === username);
+
+  if (user) {
+
+    user.shoppingCart = shoppingCart;
+    saveUserData();
+    res.json({ success: true, message: "Shopping cart updated successfully." });
+  } else {
+
+    res.status(404).json({ success: false, message: "User not found." });
+  }
+}
+
+// add a shoe to the wishlist
+function addItemWishlist(req,res) {
+  try {
+    const token = req.body.token;
+    const wishlist = req.body.wishlist;
+    let username;
+  
+    if (token == null) {
+      return res.sendStatus(401);
+    }
+  
+    jwt.verify(token, secret, (err, user) => {
+      if (err) {
+        console.log(err);
+        return res.sendStatus(403);
+      }
+      username = user.username;
+    });
+
+    const user = users.find((user) => user.username === username);
+    if (user) {
+      user.wishlist = wishlist;
+      saveUserData();
+      res.json({ success: true, message: "Wishlist updated successfully." });
+    } else {
+      res.status(404).json({ success: false, message: "User not found." });
+    } 
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+// delete shoe from wishlist
+function deleteItemWishlist(req,res) {
+  const token = req.body.token;
+  const itemName = req.body.name;
+  let username;
+
+  if (token == null) {
+    return res.sendStatus(401);
+  }
+
+  jwt.verify(token, secret, (err, user) => {
+    if (err) {
+      console.log(err);
+      return res.sendStatus(403);
+    }
+    username = user.username;
+  });
+
+  
+  const user = users.find((user) => user.username === username);
+
+  if (user) {
+    const index = user.wishlist.findIndex((item) => item.name === itemName);
+    if (index !== -1) {
+      user.wishlist.splice(index, 1);
+      saveUserData();
+      res.json({ success: true, message: "Item removed from wishlist." });
+
+    } else {  
+      res.status(404).json({ success: false, message: "Item not found in wishlist." });
+
+    }
+  } else {
+    res.status(404).json({ success: false, message: "User not found." });
+  }
+}
+
+// delete shoe from shopping cart
+function deleteItemShoppingCart(req,res) {
+  const token = req.body.token;
+  const itemName = req.body.name;
+  let username;
+
+  if (token == null) {
+    return res.sendStatus(401);
+  }
+
+  jwt.verify(token, secret, (err, user) => {
+    if (err) {
+      console.log(err);
+      return res.sendStatus(403);
+    }
+    username = user.username;
+  });
+
+  const user = users.find((user) => user.username === username);
+
+  if (user) {
+
+    const item = user.shoppingCart.find((item) => item.name === itemName);
+
+    if (item) {
+      // if more than one of this item is in shopping cart, decrease count
+      if (item.count > 1) {
+        item.count--;
+        res.json({ success: true, message: "Item count decreased by one." });
+      } else {
+        // only one pair of this shoe -> delete it
+        const index = user.shoppingCart.findIndex((item) => item.name === itemName);
+        user.shoppingCart.splice(index, 1);
+        res.json({ success: true, message: "Item removed from shopping cart." });
+      }
+      saveUserData();
+    } else {
+      res.status(404).json({ success: false, message: "Item not found in shopping cart." });
+    }
+  } else {
+    res.status(404).json({ success: false, message: "User not found." });
+  }
+}
 
 // Export the functions
 module.exports = {
+  getShoppingCart,
+  deleteItemWishlist,
+  addItemWishlist,
+  addItemShoppingCart,
+  deleteItemShoppingCart,
+  getWishlist,
   handleLogin,
   handleRegistration,
   loadUserData,

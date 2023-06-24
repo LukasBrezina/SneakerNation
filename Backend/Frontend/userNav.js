@@ -20,13 +20,13 @@ fetch('/api/verify', {
             <div class="collapse user-collapse" id="accountToggle">
               <ul class="account-choices">
                 <li class="account-item">
-                  <a class="link" href="">${data.user.username}</a>
+                  ${data.user.username}
                 </li>
                 <li class="account-item">
-                  <a class="link" href="">Shopping Cart</a>
+                  <a class="link" href="/cart.html">Shopping Cart</a>
                 </li>
                 <li class="account-item">
-                  <a class="link" href="">Wishlist</a>
+                  <a class="link" href="/wishlist.html">Wishlist</a>
                 </li>
                 <li class="account-item">
                   <a class="link" href="" id="logoutButton">Logout</a>
