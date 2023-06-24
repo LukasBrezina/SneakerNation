@@ -43,39 +43,32 @@ body {
   }
   
   button[type="submit"] {
-    background-color: lightgrey;
-    padding: 10px 15px 10px 12px;
-    background-color: lightgrey;
-    border-style: solid;
-    border-width: 3px;
-    border-radius: 18px;
-    border-color: black;
-    font-size: 13px;
-    color:  black;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    color: #f8f8f8;
+    background-color: #000000;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 4px;
   }
   
   button[type="submit"]:hover {
-    background-color: darkgray;
-  }
-  
-  button[type="button"]:active {
-    background-color: lightgrey;
-    padding: 10px 15px 10px 12px;
-    background-color: lightgrey;
-    border-style: solid;
-    border-width: 3px;
-    border-radius: 18px;
-    border-color: black;
-    font-size: 13px;
-    color:  black;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
+    color: white;
+    background-color: #1e3a8c;
   }
 
-  button[type="button"]:hover {
-    background-color: darkgray;
+  button[type="submit"]:focus {
+    outline: none;
+  }
+
+  button[type="submit"]:active {
+    background-color: #0e2358;
   }
 
   
@@ -108,8 +101,7 @@ body {
   }
   
   #myForm {
-    
-  float: right;
+    float: right;
     margin-top: 10px; /* Adjust the margin-top value to bring the form closer */
     margin-left:  10px;
     margin-right: 30%;
@@ -129,21 +121,12 @@ body {
     border-radius: 4px;
     background-color: #f8f8f8;
   }
-  
 
-  .container {
-    display: grid;
-    justify-content: center;
-    align-items: center;
-  height: 70px;
-}
-
-.container {
+.container-login {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 0;
-  margin-bottom: 0;
+  height: 70px;
   margin: 0;
   padding: 0;
 }
