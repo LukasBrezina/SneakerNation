@@ -3,6 +3,11 @@ const urlParams = new URLSearchParams(window.location.search);
 const brand = urlParams.get('brand');
 const brandTitleElement = document.querySelector('#brandTitle');
 brandTitleElement.textContent = brand.charAt(0).toUpperCase() + brand.slice(1);
+
+if (brand == "newbalance"){
+    brandTitleElement.textContent = "New Balance"; //Just for New Balance
+}
+
 xhr.open("GET", `/brand/${brand}`);
 console.log("Brand Name:", brand); // Log the brand name
 xhr.onload = function() {
