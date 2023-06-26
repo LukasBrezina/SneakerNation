@@ -31,7 +31,8 @@ let selectCount = 0;
 // Render each item on the page
 async function renderCart() {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    document.getElementById("cart-container").innerHTML = "";
+    const cartContainer = document.getElementById("cart-container");
+    cartContainer.innerHTML = "";
 
     if (selectCount < 1) {
          // currency select
@@ -51,52 +52,65 @@ async function renderCart() {
     }
 
     cart.forEach(item => {
-
+        const article = createShoeArticle(item);
+        cartContainer.appendChild(article);
         fetch(`/convert-currency?have=USD&want=${currentCurrency}&amount=${parseInt(item.price)}`)
-        .then(response => {
-            let newPrice = response;
-            console.log(newPrice)
-            console.log(response.data)
-            item.price = newPrice;
-            console.log(item.price)
-        })
-        .catch((error) => {
-            console.log(error);
-        })
-        
-        // article
-        let article = document.createElement("article");
-        article.className = "shoe";
-        // product name
-        const name = document.createElement("h2");
-        name.innerText = item.name;
-        name.className = "shoe-name"
-        // paragraphs
-        let infoParagraph = document.createElement("p");
-        infoParagraph.className = "shoe-p";
-        // thumbnail
-        const pic = document.createElement("img");
-        pic.className = "shoe-img";
-        pic.setAttribute("src", item.image);
-        // infoParagraph content
-        const price = "Quantity: " + item.count + "<br> Price: " + item.price + currentCurrency;
-        // append to paragraphs
-        infoParagraph.innerHTML = price + "<br>";
-        // create buttons for cart
-        const button2 = document.createElement("button");
-        button2.innerText = "Delete from Cart";
-        button2.addEventListener('click', () => removeCart(item.name));
-        article.append(name);
-        article.append(pic);
-        article.append(infoParagraph);
-        article.append(button2);
-        document.getElementById("cart-container").appendChild(article);
+            .then(response => response.json())
+            .then(data => {
+                    const newPrice = data.price;
+                    const shoeArticle = cartContainer.querySelector(`[data-name="${item.name}"]`);
 
+                // update price of shoe
+                const infoParagraph = shoeArticle.querySelector(".shoe-p");
+                const price = "Quantity: " + item.count + "<br> Price: " + newPrice + " " + currentCurrency;
+                infoParagraph.innerHTML = price + "<br>";
+            })
+            .catch((error) => {
+                console.log(error);
+            });
     });
 }
 
 // store Wishlist -> renderCart after
 storeWishlist().then(renderCart);
+
+function createShoeArticle(item) {
+    // article
+    let article = document.createElement("article");
+    article.className = "shoe";
+    article.setAttribute("data-name", item.name);
+
+    // product name
+    const name = document.createElement("h2");
+    name.innerText = item.name;
+    name.className = "shoe-name";
+
+    // paragraphs
+    let infoParagraph = document.createElement("p");
+    infoParagraph.className = "shoe-p"; // Correct class name
+
+    // thumbnail
+    const pic = document.createElement("img");
+    pic.className = "shoe-img";
+    pic.setAttribute("src", item.image);
+
+    // infoParagraph content
+    const price = "Quantity: " + item.count + "<br> Price: " + "... " + currentCurrency;
+    infoParagraph.innerHTML = price + "<br>";
+
+    // create buttons for cart
+    const button2 = document.createElement("button");
+    button2.innerText = "Delete from Cart";
+    button2.addEventListener('click', () => removeCart(item.name));
+
+    // append elements to the article
+    article.append(name);
+    article.append(pic);
+    article.append(infoParagraph);
+    article.append(button2);
+
+    return article;
+}
 
 // delete item from shopping cart from the backend
 async function removeCart(itemName) {
