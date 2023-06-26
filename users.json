@@ -70,5 +70,16 @@
         "image": "https://images.stockx.com/images/adidas-Yeezy-Slide-Black-Product.jpg?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1646687426"
       }
     ]
+  },
+  {
+    "username": "testo",
+    "password": "abc",
+    "wishlist": [
+      {
+        "name": "adidas Yeezy Foam RNR MX Cinder",
+        "price": 90,
+        "image": "https://images.stockx.com/images/adidas-Yeezy-Foam-RNNR-MX-Brown-Blue-Product.jpg?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1686134738"
+      }
+    ]
   }
 ]
