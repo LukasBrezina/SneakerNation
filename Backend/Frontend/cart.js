@@ -25,12 +25,45 @@ async function storeWishlist() {
     }
 }
 
+let currentCurrency = 'USD';
+let selectCount = 0;
+
 // Render each item on the page
 async function renderCart() {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     document.getElementById("cart-container").innerHTML = "";
 
+    if (selectCount < 1) {
+         // currency select
+        const selectElement = document.createElement('select');
+        const currencies = ['USD', 'EUR']; 
+        currencies.forEach(currency => {
+            const optionElement = document.createElement('option');
+            optionElement.value = currency;
+            optionElement.textContent = currency;
+            selectElement.appendChild(optionElement);
+            });
+    
+        selectElement.value = currentCurrency;
+        selectElement.addEventListener('change', handleCurrencyChange);
+        document.getElementById("loginContainer").appendChild(selectElement);
+        selectCount++;
+    }
+
     cart.forEach(item => {
+
+        fetch(`/convert-currency?have=USD&want=${currentCurrency}&amount=${parseInt(item.price)}`)
+        .then(response => {
+            let newPrice = response;
+            console.log(newPrice)
+            console.log(response.data)
+            item.price = newPrice;
+            console.log(item.price)
+        })
+        .catch((error) => {
+            console.log(error);
+        })
+        
         // article
         let article = document.createElement("article");
         article.className = "shoe";
@@ -46,7 +79,7 @@ async function renderCart() {
         pic.className = "shoe-img";
         pic.setAttribute("src", item.image);
         // infoParagraph content
-        const price = "Quantity: " + item.count + "<br> Price: " + item.price + "$";
+        const price = "Quantity: " + item.count + "<br> Price: " + item.price + currentCurrency;
         // append to paragraphs
         infoParagraph.innerHTML = price + "<br>";
         // create buttons for cart
@@ -58,6 +91,7 @@ async function renderCart() {
         article.append(infoParagraph);
         article.append(button2);
         document.getElementById("cart-container").appendChild(article);
+
     });
 }
 
@@ -112,3 +146,30 @@ async function deleteItem(itemName) {
     deleteItemFromLocalStorage(itemName);
     renderCart();
 }
+
+// fetch Patch endpoint to make change when select is changed
+function handleCurrencyChange(event) {
+    const newCurrency = event.target.value;
+    
+    // patch endpoint to update currency
+    fetch('/api/updateCurrency', {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ currency: newCurrency })
+    })
+    .then(response => {
+      if (response.ok) {
+        currentCurrency = newCurrency;
+        renderCart();
+        console.log('Currency updated successfully');
+      } else {
+        console.error('Failed to update currency');
+      }
+    })
+    .catch(error => {
+      console.error('An error occurred while updating currency:', error);
+    });
+  }
+

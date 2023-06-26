@@ -8,6 +8,7 @@ const bodyParser = require("body-parser");
 //SzauleLogin/server/backendLoginAdmin.js
 const backendLoginAdmin = require('./backendLoginAdmin');
 const jwt = require('jsonwebtoken');
+const axios = require('axios')
 
 app.use(express.static(path.join(__dirname, 'Frontend')));
 
@@ -131,6 +132,42 @@ app.get('/api/getShoppingCart', backendLoginAdmin.getShoppingCart);
 // Get wishlist of specific user
 app.get('/api/getWishlist', backendLoginAdmin.getWishlist);
 
+// to change currency
+app.patch('/api/updateCurrency', (req, res) => {
+  const newCurrency = req.body.currency;
+  currentCurrency = newCurrency;
+  res.sendStatus(200); 
+});
 
+
+app.get(`/convert-currency`, (req, res) => {
+  const want = req.query.want;
+  const have = req.query.have;
+  const amount = parseInt(req.query.amount);
+  const apiKey = 'LtYAZInNgi2eC5RFpebm+w==gPR4PFFxS324RCW5';
+
+  const apiUrl = `https://api.api-ninjas.com/v1/convertcurrency?want=${want}&have=${have}&amount=${amount}`;
+
+  const options = {
+    headers: {
+      'X-Api-Key': apiKey
+    }
+  };
+
+  axios.get(apiUrl, options)
+    .then(response => {
+      const convertedCurrency = response.data.new_amount;
+      console.log(parseInt(convertedCurrency));
+      res.send(parseInt(convertedCurrency));
+    })
+    .catch(error => {
+      console.error('Request failed:', error);
+      res.status(500).send('An error occurred');
+    });
+});
+
+
+
+// key: LtYAZInNgi2eC5RFpebm+w==gPR4PFFxS324RCW5
 
 console.log("Server now listening on http://localhost:3000/")
