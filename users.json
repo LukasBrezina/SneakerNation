@@ -185,5 +185,63 @@
         "image": "https://images.stockx.com/images/Air-Jordan-1-High-OG-Spider-Man-Across-the-Spider-Verse-Product.jpg?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1683568981"
       }
     ]
+  },
+  {
+    "username": "Hello",
+    "password": "abc"
+  },
+  {
+    "username": "awokd",
+    "password": "daokwd"
+  },
+  {
+    "username": "test123",
+    "password": "123",
+    "wishlist": [
+      {
+        "name": "Jordan 1 Retro High OG Spider-Man Across the Spider-Verse",
+        "price": 200,
+        "image": "https://images.stockx.com/images/Air-Jordan-1-High-OG-Spider-Man-Across-the-Spider-Verse-Product.jpg?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1683568981"
+      }
+    ],
+    "shoppingCart": [
+      {
+        "name": "Jordan 1 Retro High OG Spider-Man Across the Spider-Verse",
+        "price": 200,
+        "count": 2,
+        "image": "https://images.stockx.com/images/Air-Jordan-1-High-OG-Spider-Man-Across-the-Spider-Verse-Product.jpg?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1683568981"
+      },
+      {
+        "name": "Jordan 1 Mid SE Ice Blue (2023)",
+        "price": 135,
+        "count": 1,
+        "image": "https://images.stockx.com/images/Air-Jordan-1-Mid-Ice-Blue-Product.jpg?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1678483899"
+      },
+      {
+        "name": "Jordan 3 Retro White Cement Reimagined",
+        "price": 210,
+        "count": 2,
+        "image": "https://images.stockx.com/images/Air-Jordan-3-Retro-White-Cement-Reimagined-Product.jpg?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1678266994"
+      }
+    ]
+  },
+  {
+    "username": "opooo",
+    "password": "awdawd",
+    "wishlist": [
+      {
+        "name": "Jordan 1 Retro High OG Spider-Man Across the Spider-Verse",
+        "price": 200,
+        "image": "https://images.stockx.com/images/Air-Jordan-1-High-OG-Spider-Man-Across-the-Spider-Verse-Product.jpg?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1683568981"
+      }
+    ],
+    "shoppingCart": [
+      {
+        "name": "Jordan 1 Mid SE Ice Blue (2023)",
+        "price": 135,
+        "count": 1,
+        "image": "https://images.stockx.com/images/Air-Jordan-1-Mid-Ice-Blue-Product.jpg?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1678483899"
+      }
+    ]
   }
 ]
