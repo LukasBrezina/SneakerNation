@@ -164,7 +164,6 @@ app.get(`/convert-currency`, (req, res) => {
             try {
                 const parsedData = JSON.parse(data);
                 const convertedCurrency = parseInt(parsedData.new_amount);
-                console.log(convertedCurrency);
                 res.send({ price: convertedCurrency });
             } catch (error) {
                 console.error('Parsing response failed:', error);
@@ -178,7 +177,5 @@ app.get(`/convert-currency`, (req, res) => {
         res.status(500).send('An error occurred');
     });
 });
-
-// key: LtYAZInNgi2eC5RFpebm+w==gPR4PFFxS324RCW5
 
 console.log("Server now listening on http://localhost:3000/")

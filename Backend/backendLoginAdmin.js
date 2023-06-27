@@ -157,7 +157,7 @@ function getShoppingCart(req,res) {
   }
 }
 
-// add an shoe to the shopping cart
+// add a shoe to the shopping cart
 function addItemShoppingCart(req,res) {
   const token = req.body.token;
   const shoppingCart = req.body.shoppingCart;

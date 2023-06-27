@@ -105,29 +105,29 @@
         "image": "https://images.stockx.com/images/Air-Jordan-1-Retro-Low-OG-Black-Cement-Product.jpg?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1686167368"
       },
       {
-        "name": "New Balance 550 White Green",
-        "price": 120,
-        "image": "https://images.stockx.com/images/New-Balance-550-White-Green-Product.jpg?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1628002321"
+        "name": "Jordan 7 Retro White Infrared",
+        "price": 210,
+        "image": "https://images.stockx.com/images/Air-Jordan-7-Retro-White-Infrared.jpg?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1681150137"
       }
     ],
     "shoppingCart": [
+      {
+        "name": "Jordan 1 Retro Low OG Black Cement",
+        "price": 140,
+        "count": 1,
+        "image": "https://images.stockx.com/images/Air-Jordan-1-Retro-Low-OG-Black-Cement-Product.jpg?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1686167368"
+      },
+      {
+        "name": "Jordan 7 Retro White Infrared",
+        "price": 210,
+        "count": 2,
+        "image": "https://images.stockx.com/images/Air-Jordan-7-Retro-White-Infrared.jpg?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1681150137"
+      },
       {
         "name": "Jordan 3 Retro White Cement Reimagined",
         "price": 210,
         "count": 1,
         "image": "https://images.stockx.com/images/Air-Jordan-3-Retro-White-Cement-Reimagined-Product.jpg?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1678266994"
-      },
-      {
-        "name": "Jordan 1 Retro High OG Washed Black",
-        "price": 180,
-        "count": 1,
-        "image": "https://images.stockx.com/images/Air-Jordan-1-Retro-High-OG-Washed-Black-Product.jpg?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1686247209"
-      },
-      {
-        "name": "Jordan 4 Retro Thunder (2023)",
-        "price": 210,
-        "count": 1,
-        "image": "https://images.stockx.com/images/Air-Jordan-4-Retro-Thunder-2023-Product.jpg?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1680288788"
       }
     ]
   },
@@ -240,6 +240,31 @@
         "name": "Jordan 1 Mid SE Ice Blue (2023)",
         "price": 135,
         "count": 1,
+        "image": "https://images.stockx.com/images/Air-Jordan-1-Mid-Ice-Blue-Product.jpg?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1678483899"
+      }
+    ]
+  },
+  {
+    "username": "testzwecke",
+    "password": "12",
+    "wishlist": [
+      {
+        "name": "Jordan 1 Retro Low OG Black Cement",
+        "price": 140,
+        "image": "https://images.stockx.com/images/Air-Jordan-1-Retro-Low-OG-Black-Cement-Product.jpg?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1686167368"
+      }
+    ],
+    "shoppingCart": [
+      {
+        "name": "Jordan 1 Retro High OG Spider-Man Across the Spider-Verse",
+        "price": 200,
+        "count": 2,
+        "image": "https://images.stockx.com/images/Air-Jordan-1-High-OG-Spider-Man-Across-the-Spider-Verse-Product.jpg?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1683568981"
+      },
+      {
+        "name": "Jordan 1 Mid SE Ice Blue (2023)",
+        "price": 135,
+        "count": 2,
         "image": "https://images.stockx.com/images/Air-Jordan-1-Mid-Ice-Blue-Product.jpg?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1678483899"
       }
     ]
